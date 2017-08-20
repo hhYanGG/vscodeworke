@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <style type="text/css">
+            .red{color: red}
+        </style>
+
+        <script type="text/javascript">
+            var xmlHttp = null;
+            //页面加载事件处理函数
+            function onHelloClick()
+            {
+                loadXmlHttp()
+                {
+                    loadXmlHttp();
+                    sendRequest("Welcome.html");
+                }
+                //得到xmlHttp对象
+                function loadXmlHttp()
+                {
+                    if(window.XMLHttpRequest)
+                    {
+                        xmlHttp = new XMLHttpRequest();
+
+                    }else if(window.ActiveXObject)
+                    {
+                        try
+                        {
+                            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        catch(e){}
+                    }
+                }
+                function sendRequest(url)
+                {
+                    if(xmlHttp)
+                    {
+                        xmlHttp.open("GET",url,true);
+                        xmlHttp.onreadystatechange = onCallback;
+                        xmlHttp.sendRequestHeader("Content-type","application/x-www-form-urlemcoded");
+                        xmlHttp.send(null);
+                    }
+                }
+                
+            }
+        </script>
+    </head>
+</html>
