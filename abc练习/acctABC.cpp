@@ -80,3 +80,24 @@ void BrassPlus::ViewAcct() const
     cout << "Loan rate " << 100 * rate << " % \n";
     Restore(f);
 }
+void BrassPlus::Withdraw(double amt )
+{
+    Formatting f = SetFormat();
+
+    double bal = Balance();
+    if (amt <= bal )
+        AcctABC::Withdraw(amt);
+    else if (amt <= bal + maxLoan - owesBank)
+    {
+        double advance = amt - bal;
+        owesBank += advance * ( 1.0 + rate );
+        cout << "Bank advance: ￥ " << advance << endl ;
+        Deposit(advance) ;
+        AcctABC::Withdraw(amt);
+    }
+    else{
+        cout << "Credit limit exceeded Transaction cancelled \n";
+    }
+    Restore(f);    
+}
+
