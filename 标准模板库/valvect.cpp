@@ -32,6 +32,6 @@ int main()
         cout.width(8);
         cout << results[i] << endl;
     }
-    cout << "done\n"
+    cout << "done\n";
     return 0;
 }
