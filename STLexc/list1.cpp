@@ -1,17 +1,19 @@
 #include <iostream>
 #include <list>
+
 using namespace std;
+
 int main()
 {
-    list<char> coll;
+    list<char> mylist;
     for(char c = 'a'; c <= 'z'; ++c)
     {
-        coll.push_back(c);
+        mylist.push_back(c);
     }
-    while(! coll.empty())
+    list<char>::const_iterator cit;
+    for(cit = mylist.begin(); cit != mylist.end(); ++cit)
     {
-        cout << coll.front() << ' ';
-        coll.pop_front();
+        cout << *cit << " ";
     }
-    cout << endl;
+    return 0;
 }
