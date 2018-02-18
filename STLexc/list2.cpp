@@ -20,8 +20,9 @@ int main()
         list2.push_front(i);
     }
     printLists(list1,list2);
-    list2.splice(find(list2.begin(),list2.end(),3),
-                      list1);
+    list2.splice(find(list2.begin(), list2.end(),3),
+                 list1);
+    
     printLists(list1, list2);
     list2.splice(list2.end(),
                  list2,
