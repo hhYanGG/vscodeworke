@@ -1,0 +1,25 @@
+//iter/advance2.cpp
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <iterator>
+using namespace std;
+
+int main()
+{
+    istream_iterator<string> cinPos(cin);
+    ostream_iterator<string> coutPos(cout, " ");
+    /*while input is not at the end of the file
+    *- wtite every thirf string
+    */
+    while(cinPos != istream_iterator<string>()){
+        //ignore the following two strings
+        advance(cinPos, 2);
+        //read and write the third string
+        if(cinPos != istream_iterator<string>()){
+            *coutPos++ = *cinPos++;
+        }
+    }
+    cout << endl;
+}
