@@ -34,10 +34,17 @@ shared_ptr<Person> initFamily(const string& name)
 }
 int main()
 {
-    shared_ptr<Person> p = initFamily("nico");
-    cout << "noco's family exists" << endl;
-    cout << "- nico is shared " << p.use_count() << endl;
-    cout << "- name of 1st kid of nico's mom : "
-         <<p->mother->kids[0]->name << endl;
+    // shared_ptr<Person> p = initFamily("nico");
+    // cout << "noco's family exists" << endl;
+    // cout << "- nico is shared " << p.use_count() << endl;
+    // cout << "- name of 1st kid of nico's mom : "
+    //      <<p->mother->kids[0]->name << endl;
+    unique_ptr<string> u_p(new string("hello"));
+    auto s_p = u_p.release();
+    if(!u_p){
+        cout << "u_p deleted !";
+    }
+    cout << *s_p ;
     while(1);
+
  }
