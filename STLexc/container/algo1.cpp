@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include "../print.hpp"
 using namespace std;
 int main()
 {
@@ -27,7 +28,9 @@ int main()
     {
         cout << *pos << ' ';
     }
+    PRINT_ELEMENTS(coll,"hello world");
     cout << endl;
+    while(1);
     return 0;
 
 }
